@@ -1,10 +1,16 @@
 async function autentisering() {
     const brukernavn = document.getElementById("brukernavn").value;
+    const passord = document.getElementById("passord").value;
 
     console.log("Dette er brukernavnet som er skrevet inn: ", brukernavn);
+    console.log("Dett er passordet som er skrevet inn: ", passord);
 
     if(!brukernavn){
         console.log("Mangler brukernavn.");
+    }
+
+    if(!passord){
+        console.log("Mangler passord.");
     }
 
     try{
@@ -14,7 +20,7 @@ async function autentisering() {
                 "Content-Type": "application/json"
             },
             credentials: "include",
-            body: JSON.stringify({ brukernavn })
+            body: JSON.stringify({ brukernavn, passord })
         });
 
         const authRes = await authReq.json();
