@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
-    <div id="logginn">
-        <h1>Skriv inn brukernavn</h1>
-        <input id="brukernavn" type="text" placeholder="Brukernavn">
-        <h1 id="logginn">Skriv inn passord</h1>
-        <input id="passord" type="text" placeholder="Passord">
 
-        <button onclick="autentisering()">Logg inn</button>
+<body>
+    <div id="registrer">
+        <h1>Registrer brukernavn</h1>
+        <input id="regBrukernavn" type="text" placeholder="Registrer brukernavn">
+
+        <h1>Skriv inn passord</h1>
+        <input id="regPassord" type="password" placeholder=" Registrer passord">
+
+        <button onclick="registrer()">Registrer</button>
     </div>
     
+    <div id="registrer">
+        <h1>Registrer brukernavn</h1>
+        <input id="regBrukernavn" type="text" placeholder="Registrer brukernavn">
+
+        <h1>Skriv inn passord</h1>
+        <input id="regPassord" type="password" placeholder=" Registrer passord">
+
+        <button onclick="registrer()">Registrer</button>
+    </div>
+
     <script src="frontend/auth.js"></script>
 </body>
+
 </html>

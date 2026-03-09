@@ -1,26 +1,26 @@
-async function autentisering() {
-    const brukernavn = document.getElementById("brukernavn").value;
-    const passord = document.getElementById("passord").value;
+async function registrer() {
+    const regBrukernavn = document.getElementById("regBrukernavn").value;
+    const regPassord = document.getElementById("regPassord").value;
 
-    console.log("Dette er brukernavnet som er skrevet inn: ", brukernavn);
-    console.log("Dett er passordet som er skrevet inn: ", passord);
+    console.log("Dette er brukernavnet som er skrevet inn: ", regBrukernavn);
+    console.log("Dett er passordet som er skrevet inn: ", regPassord);
 
-    if(!brukernavn){
+    if(!regBrukernavn){
         console.log("Mangler brukernavn.");
     }
 
-    if(!passord){
+    if(!regPassord){
         console.log("Mangler passord.");
     }
 
     try{
-        const authReq = await fetch("http://localhost:3000/api/auth/login", {
+        const authReq = await fetch("http://localhost:3000/api/auth/registrer", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             credentials: "include",
-            body: JSON.stringify({ brukernavn, passord })
+            body: JSON.stringify({ regBrukernavn, regPassord })
         });
 
         const authRes = await authReq.json();

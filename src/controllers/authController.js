@@ -7,7 +7,7 @@ export async function login(req, res) {
     console.log("authController brukernavn: ", brukernavn);
     console.log("authController passord: ", passord)
 
-    const { data: registrerBruker } = await registrerBrukere(brukernavn);
+    const { data: registrerBruker } = await registrerBrukere(brukernavn, passord);
 
     console.log("authController test levering av database", registrerBruker);
 }
