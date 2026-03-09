@@ -1,12 +1,12 @@
 import { supabase } from "../config/supabase.js";
 
-export async function registrerBrukere(brukernavn, passord){
+export async function registrerBrukere(regBrukernavn, regPassord){
     return await supabase
     .from("Brukere")
     .insert([
         {
-            Brukernavn: brukernavn,
-            Passord: passord
+            Brukernavn: regBrukernavn,
+            Passord: regPassord
         }
     ])
     .select();

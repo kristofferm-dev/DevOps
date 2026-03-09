@@ -2,6 +2,8 @@ async function registrer() {
     const regBrukernavn = document.getElementById("regBrukernavn").value;
     const regPassord = document.getElementById("regPassord").value;
 
+    const regStatusMsg = document.getElementById("regStatus");
+
     console.log("Dette er brukernavnet som er skrevet inn: ", regBrukernavn);
     console.log("Dett er passordet som er skrevet inn: ", regPassord);
 
