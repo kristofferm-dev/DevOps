@@ -11,3 +11,11 @@ export async function registrerBrukere(regBrukernavn, regPassord){
     ])
     .select();
 }
+
+export async function loggInnBruker(logBrukernavn, logPassord){
+    return await supabase
+    .from("Brukere")
+    .select("BrukerID, Brukernavn, Passord")
+    .eq("Brukernavn", logBrukernavn)
+    .single();
+}

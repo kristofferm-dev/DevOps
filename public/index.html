@@ -13,7 +13,7 @@
         <h1>Registrer brukernavn</h1>
         <input id="regBrukernavn" type="text" placeholder="Registrer brukernavn">
 
-        <h1>Skriv inn passord</h1>
+        <h1>Registrer passord</h1>
         <input id="regPassord" type="password" placeholder=" Registrer passord">
 
         <p id="regStatus"></p>
@@ -21,14 +21,16 @@
         <button onclick="registrer()">Registrer</button>
     </div>
 
-    <div id="registrer">
-        <h1>Registrer brukernavn</h1>
-        <input id="regBrukernavn" type="text" placeholder="Registrer brukernavn">
+    <div id="login">
+        <h1>Skriv inn brukernavn</h1>
+        <input id="brukernavn" type="text" placeholder="Skriv inn brukernavn">
 
         <h1>Skriv inn passord</h1>
-        <input id="regPassord" type="password" placeholder=" Registrer passord">
+        <input id="passord" type="password" placeholder="Skriv inn passord">
 
-        <button onclick="registrer()">Registrer</button>
+        <p id="status"></p>
+
+        <button onclick="authenticate()">Logg inn</button>
     </div>
 
     <script src="frontend/auth.js"></script>
