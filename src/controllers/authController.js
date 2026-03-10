@@ -1,6 +1,7 @@
 import { registrerBrukere } from "../models/authModels.js";
 import { loggInnBruker } from "../models/authModels.js";
 import { hashThePassword } from "../services/authService.js";
+import { checkHashedPassword } from "../services/authService.js";
 
 // Export av data fra login
 export async function registrer(req, res) {
@@ -31,13 +32,17 @@ export async function login(req, res) {
     const {logBrukernavn, logPassord} = req.body;    //Body fra frontend
 
     console.log("authController logBrukernavn: ", logBrukernavn);
-    console.log("authController logPassord: ", logPassord)
+    console.log("authController logPassord: ", logPassord);
 
     const { data: logBrukere } = await loggInnBruker(logBrukernavn, logPassord);
 
     console.log("authController logBrukere (Info fra database)", logBrukere);
 
-    if(logBrukere) {
+    const sjekketPassord = await checkHashedPassword(logPassord, logBrukere.Passord);
+
+    console.log("authController sjekk passord", sjekketPassord);
+
+    if(sjekketPassord.success === true) {
         console.log("authController bruker logget inn.");
         return res.json({ success: true }); 
     }
