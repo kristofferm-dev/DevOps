@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 
 // Routes import
 import brukerRoutes from "../src/routes/authRoutes.js";
+import maskinRoutes from "../src/routes/maskinRoutes.js";
 
 // __dirname i ESM (Type måte å definere dynamiske filstier)
 const __filename = fileURLToPath(import.meta.url);
@@ -21,10 +22,19 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 
 // API Routes, Vi bruker falske rutinger fra frontend og ruter til de riktige filstier
 app.use("/api/auth", brukerRoutes);
+app.use("/api/maskiner", maskinRoutes);
 
 // HTML-sidene vi bruker i prosjektet
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+});
+
+app.get("/start", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public", "hjemmeside.html"));
+});
+
+app.get("/maskiner", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public", "maskiner.html"));
 });
 
 // Serveren og hvilken port den skal lytte til
