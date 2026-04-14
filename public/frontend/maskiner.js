@@ -49,7 +49,7 @@ async function fetchAllComputers() {
         });
 
     }
-    catch (error) {
+    catch (error) { 
         console.log("Feilet å hente maskiner.");
     }
 }

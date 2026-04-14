@@ -73,6 +73,7 @@ async function authenticate() {
         console.log(logRes);
 
         if(logRes.success === true) {
+            window.location.href = "start";
             logStatusMsg.textContent = "Bruker funnet!";
             logStatusMsg.style.color = "green";
         }
